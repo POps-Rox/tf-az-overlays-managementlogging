@@ -4,7 +4,7 @@
 module "mod_logging" {
   source = "../../.." # Path to the root of the repository
 
-  depends_on = [azurerm_resource_group.example-network-rg, azurerm_virtual_network.example-vnet, azurerm_subnet.example-snet]
+  depends_on = [azurerm_resource_group.example-network-rg, azurerm_virtual_network.example-vnet]
 
   #####################################
   ## Global Settings Configuration  ###
