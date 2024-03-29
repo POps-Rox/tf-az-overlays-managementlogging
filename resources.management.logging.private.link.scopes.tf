@@ -11,7 +11,7 @@ module "mod_ampls" {
 
   count = var.enable_ampls ? 1 : 0
 
-  depends_on = [azurerm_log_analytics_workspace.loganalytics]
+  depends_on = [module.lz_management_resources]
 
   # Resource Group, location, VNet and Subnet details
   create_resource_group = true
@@ -21,7 +21,7 @@ module "mod_ampls" {
   org_name              = var.org_name
 
   # Log Analytics Workspaces
-  linked_log_analytic_workspace_ids = [azurerm_log_analytics_workspace.loganalytics.id]
+  linked_log_analytic_workspace_ids = concat([module.lz_management_resources.log_analytics_workspace.id], var.linked_log_analytic_workspace_ids)
 
   # Private Endpoint details
   # Resource Group, location, VNet and Subnet details
