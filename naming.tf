@@ -21,3 +21,23 @@ data "azurenoopsutils_resource_name" "laws" {
   clean_input   = true
   separator     = "-"
 }
+
+data "azurenoopsutils_resource_name" "automation_account" {
+  name          = var.workload_name
+  resource_type = "azurerm_automation_account"
+  prefixes      = [var.org_name, var.use_location_short_name ? module.mod_azure_region_lookup.location_short : local.location]
+  suffixes      = compact([var.name_prefix == "" ? null : local.name_prefix, var.deploy_environment, local.name_suffix, var.use_naming ? "" : "aa"])
+  use_slug      = var.use_naming
+  clean_input   = true
+  separator     = "-"
+}
+
+data "azurenoopsutils_resource_name" "user_assigned_identity" {
+  name          = var.workload_name
+  resource_type = "azurerm_automation_account"
+  prefixes      = [var.org_name, var.use_location_short_name ? module.mod_azure_region_lookup.location_short : local.location]
+  suffixes      = compact([var.name_prefix == "" ? null : local.name_prefix, var.deploy_environment, local.name_suffix, "uai"])
+  use_slug      = var.use_naming
+  clean_input   = true
+  separator     = "-"
+}

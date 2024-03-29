@@ -7,7 +7,7 @@
 
 output "laws_name" {
   description = "LAWS Name"
-  value       = azurerm_log_analytics_workspace.loganalytics.name
+  value       = module.lz_management_resources.log_analytics_workspace.name
 }
 
 output "laws_rgname" {
@@ -17,17 +17,17 @@ output "laws_rgname" {
 
 output "laws_resource_id" {
   description = "LAWS Resource ID"
-  value       = azurerm_log_analytics_workspace.loganalytics.id
+  value       = module.lz_management_resources.log_analytics_workspace.id
 }
 
 output "laws_workspace_id" {
   description = "LAWS Workspace ID"
-  value       = azurerm_log_analytics_workspace.loganalytics.workspace_id
+  value       = module.lz_management_resources.log_analytics_workspace.workspace_id
 }
 
 output "laws_primary_shared_key" {
   description = "LAWS Primary Shared Key"
-  value       = azurerm_log_analytics_workspace.loganalytics.primary_shared_key
+  value       = module.lz_management_resources.log_analytics_workspace.primary_shared_key
 }
 
 output "laws_storage_account_id" {
