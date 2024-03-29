@@ -24,54 +24,42 @@ locals {
       name : "AzureActivity"
       product : "OMSGallery/AzureActivity"
       publisher : "Microsoft"
-      promotionCode : ""
     },
     {
       deploy : var.enable_sentinel
       name : "SecurityInsights"
       product : "OMSGallery/SecurityInsights"
       publisher : "Microsoft"
-      promotionCode : ""
     },
     {
       deploy : var.enable_vm_insights
       name : "VMInsights"
       product : "OMSGallery/VMInsights"
       publisher : "Microsoft"
-      promotionCode : ""
     },
     {
       deploy : var.enable_azure_security_center
       name : "Security"
       product : "OMSGallery/Security"
       publisher : "Microsoft"
-      promotionCode : ""
     },
     {
       deploy : var.enable_service_map
       name : "ServiceMap"
       publisher : "Microsoft"
       product : "OMSGallery/ServiceMap"
-      promotionCode : ""
     },
     {
       deploy : var.enable_container_insights
       name : "ContainerInsights"
       publisher : "Microsoft"
       product : "OMSGallery/ContainerInsights"
-      promotionCode : ""
     },
     {
       deploy : var.enable_key_vault_analytics
       name : "KeyVaultAnalytics"
       publisher : "Microsoft"
       product : "OMSGallery/KeyVaultAnalytics"
-      promotionCode : ""
     }
   ]
-
-  privateLinkConnectionName    = "plconn${azurerm_log_analytics_workspace.loganalytics.name}${random_id.uniqueString.hex}"
-  privateLinkEndpointName      = "pl${azurerm_log_analytics_workspace.loganalytics.name}${random_id.uniqueString.hex}"
-  privateLinkScopeName         = "plscope${azurerm_log_analytics_workspace.loganalytics.name}${random_id.uniqueString.hex}"
-  privateLinkScopeResourceName = "plscres${azurerm_log_analytics_workspace.loganalytics.name}${random_id.uniqueString.hex}"
 }
