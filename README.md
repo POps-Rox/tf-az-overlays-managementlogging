@@ -41,15 +41,33 @@ module "mod_operational_logging" {
   #####################################
 
   create_resource_group = true
-  location              = "eastus"
-  deploy_environment    = "dev"
-  org_name              = "anoa"
-  environment           = "public"
-  workload_name         = "ops-core-logging"
+  location              = var.location
+  deploy_environment    = var.deploy_environment
+  org_name              = var.org_name
+  environment           = var.environment
+  workload_name         = var.workload_name
+
+  ########################################
+  ## Automation Account Configuration  ###
+  ########################################
+
+  # Enable Automation Account Linking to Log Analytics Workspace
+  enable_linked_automation_account_creation = true
+  automation_account_sku_name               = "Basic"
 
   #############################
   ## Logging Configuration  ###
   #############################
+
+  # Log Analytics Workspace Configuration
+  log_analytics_workspace_allow_resource_only_permissions    = true
+  log_analytics_workspace_cmk_for_query_forced               = true
+  log_analytics_workspace_daily_quota_gb                     = 1
+  log_analytics_workspace_internet_ingestion_enabled         = true
+  log_analytics_workspace_internet_query_enabled             = true
+  log_analytics_workspace_reservation_capacity_in_gb_per_day = 0 # CapacityReservation is not supported in this configuration
+  log_analytics_logs_retention_in_days                       = 50
+  log_analytics_workspace_sku                                = "PerGB2018"
 
   # (Optional) Logging Solutions
   # All solutions are enabled (true) by default
@@ -57,16 +75,11 @@ module "mod_operational_logging" {
   enable_azure_activity_log = true
   enable_vm_insights        = true
 
-  # (Required) To enable Azure Monitoring
-  # Sku Name - Possible values are PerGB2018 and Free
-  # Log Retention in days - Possible values range between 30 and 730
-  log_analytics_workspace_sku          = "PerGB2018"
-  log_analytics_logs_retention_in_days = 30
-
   #############################
   ## Misc Configuration     ###
   #############################
 
+  # (Optional) To enable Azure Monitoring Private Link Scope
   # Enable Azure Monitor Private Link Scope
   enable_ampls = true
 
