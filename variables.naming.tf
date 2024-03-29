@@ -52,3 +52,9 @@ variable "user_assigned_identity_custom_name" {
   type        = string
   default     = null
 }
+
+variable "ampls_subnet_custom_name" {
+  description = "The name of the custom subnet to create for Azure Monitor Private Link Scope. If not set, the name will be generated using the 'name_prefix' and 'name_suffix' variables. If set, the 'name_prefix' and 'name_suffix' variables will be ignored."
+  type        = string
+  default     = null
+}
