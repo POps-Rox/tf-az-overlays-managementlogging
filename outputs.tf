@@ -30,6 +30,11 @@ output "laws_primary_shared_key" {
   value       = module.lz_management_resources.log_analytics_workspace.primary_shared_key
 }
 
+output "laws_secondary_shared_key" {
+  description = "LAWS Primary Shared Key"
+  value       = module.lz_management_resources.log_analytics_workspace.secondary_shared_key
+}
+
 output "laws_storage_account_id" {
   description = "LAWS Storage Account ID"
   value       = module.mod_loganalytics_sa.storage_account_id
@@ -37,7 +42,7 @@ output "laws_storage_account_id" {
 
 output "laws_storage_account_name" {
   description = "LAWS Storage Account Name"
-  value       = module.mod_loganalytics_sa.storage_account_name
+  value       = local.ops_logging_law_sa_name
 }
 
 output "laws_storage_account_rgname" {
@@ -54,3 +59,25 @@ output "laws_private_link_scope_id" {
   description = "LAWS Private Link ID"
   value       = module.mod_ampls.*.azurerm_monitor_private_link_scope_id
 }
+
+output "automation_account_id" {
+  description = "Automation Account ID"
+  value       = module.lz_management_resources.automation_account.id
+}
+
+output "automation_account_name" {
+  description = "Automation Account Name"
+  value       = local.automation_account_name
+}
+
+output "automation_account_dsc_server_endpoint" {
+  description = "Automation Account Resource Group Name"
+  value       = module.lz_management_resources.automation_account.dsc_server_endpoint
+}
+
+output "automation_account_identity" {
+  description = "Automation Account Identity"
+  value       = module.lz_management_resources.automation_account.identity
+}
+
+
