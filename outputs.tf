@@ -60,6 +60,11 @@ output "laws_private_link_scope_id" {
   value       = module.mod_ampls.*.azurerm_monitor_private_link_scope_id
 }
 
+output "laws_private_link_scope_name" {
+  description = "LAWS Private Link ID"
+  value       = module.mod_ampls.*.azurerm_monitor_private_link_scope_name
+}
+
 output "automation_account_id" {
   description = "Automation Account ID"
   value       = module.lz_management_resources.automation_account.id
