@@ -53,27 +53,5 @@ variable "existing_resource_group_name" {
   default     = null
 }
 
-variable "enable_ampls" {
-  description = "Enable Azure Monitor Private Link Scope"
-  type        = bool
-  default     = false
-}
-
-variable "ampls_subnet_address_prefix" {
-  description = "The address prefix for the subnet to be created for Azure Monitor Private Link Scope."
-  type        = list(string)
-  default = null
-}
-
-variable "existing_virtual_network_name" {
-  description = "(Required) Name of the virtual network for ampls"
-  default = null
-}
-
-variable "existing_network_resource_group_name" {
-  description = "(Required) Name of the resource group for ampls network"
-  default = null
-}
-
 
 
