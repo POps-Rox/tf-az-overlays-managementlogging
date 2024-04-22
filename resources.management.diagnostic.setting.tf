@@ -6,7 +6,7 @@
 #----------------------------------------------------------
 module "mod_log_diagnostic_settings" {
   source  = "azurenoops/overlays-diagnostic-settings/azurerm"
-  version = "~> 1.0"
+  version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
@@ -14,7 +14,7 @@ module "mod_log_diagnostic_settings" {
   environment        = var.environment
   org_name           = var.org_name
 
-  custom_diagnostic_setting_name = format("%s-log-analytics-diagnostic-log", var.org_name)
+  custom_diagnostic_setting_name = format("%s-%s-log-analytics-diagnostic-log", var.org_name, var.workload_name)
   resource_id                    = module.lz_management_resources.log_analytics_workspace.id
   logs_destinations_ids          = [module.lz_management_resources.log_analytics_workspace.id, module.mod_loganalytics_sa.storage_account_id]
 }
@@ -24,7 +24,7 @@ module "mod_log_diagnostic_settings" {
 #----------------------------------------------------------
 module "mod_aa_diagnostic_settings" {
   source  = "azurenoops/overlays-diagnostic-settings/azurerm"
-  version = "~> 1.0"
+  version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
@@ -32,7 +32,7 @@ module "mod_aa_diagnostic_settings" {
   environment        = var.environment
   org_name           = var.org_name
 
-  custom_diagnostic_setting_name = format("%s-aa-diagnostic-log", var.org_name)
+  custom_diagnostic_setting_name = format("%s-%s-aa-diagnostic-log", var.org_name, var.workload_name)
   resource_id           = module.lz_management_resources.automation_account.id
   logs_destinations_ids = [module.lz_management_resources.log_analytics_workspace.id, module.mod_loganalytics_sa.storage_account_id]
 }

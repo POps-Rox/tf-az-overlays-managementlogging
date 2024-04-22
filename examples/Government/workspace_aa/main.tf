@@ -49,9 +49,6 @@ module "mod_logging" {
   ## Misc Configuration     ###
   #############################
 
-  # Enable Azure Monitor Private Link Scope
-  enable_ampls = false
-
   # By default, this will apply resource locks to all resources created by this module.
   # To disable resource locks, set the argument to `enable_resource_locks = false`.
   enable_resource_locks = false
