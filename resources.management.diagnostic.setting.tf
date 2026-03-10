@@ -6,7 +6,7 @@
 #----------------------------------------------------------
 module "mod_log_diagnostic_settings" {
   source  = "azurenoops/overlays-diagnostic-settings/azurerm"
-  version = "1.0.0"
+  version = "1.5.0"
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
@@ -24,7 +24,7 @@ module "mod_log_diagnostic_settings" {
 #----------------------------------------------------------
 module "mod_aa_diagnostic_settings" {
   source  = "azurenoops/overlays-diagnostic-settings/azurerm"
-  version = "1.0.0"
+  version = "1.5.0"
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
