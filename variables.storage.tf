@@ -1,8 +1,8 @@
 
 variable "loganalytics_storage_account_kind" {
   description = "The Kind of log analytics storage account to create. Valid options are Storage, StorageV2, BlobStorage, FileStorage, BlockBlobStorage"
-  type         = string
-  default      = "StorageV2"
+  type        = string
+  default     = "StorageV2"
 }
 
 variable "loganalytics_storage_account_tier" {

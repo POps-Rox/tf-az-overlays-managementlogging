@@ -43,7 +43,7 @@ variable "ops_logging_law_sa_custom_name" {
 
 variable "automation_account_custom_name" {
   description = "The name of the custom automation account to create. If not set, the name will be generated using the 'name_prefix' and 'name_suffix' variables. If set, the 'name_prefix' and 'name_suffix' variables will be ignored."
-  type        =  string
+  type        = string
   default     = null
 }
 

@@ -25,7 +25,7 @@ module "lz_management_resources" {
     type         = "UserAssigned"
     identity_ids = [azurerm_user_assigned_identity.management.0.id]
     } : {
-    type = "SystemAssigned"
+    type         = "SystemAssigned"
     identity_ids = []
   }
 
@@ -47,5 +47,5 @@ module "lz_management_resources" {
   log_analytics_workspace_sku                                = var.log_analytics_workspace_sku
 
   # Log Analytics Solutions Configuration
-  log_analytics_solution_plans = [for solution in local.log_analytics_solutions: solution if solution.deploy == true]
+  log_analytics_solution_plans = [for solution in local.log_analytics_solutions : solution if solution.deploy == true]
 }
