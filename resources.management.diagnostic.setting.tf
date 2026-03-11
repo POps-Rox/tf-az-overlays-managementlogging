@@ -6,7 +6,6 @@
 #----------------------------------------------------------
 module "mod_log_diagnostic_settings" {
   source  = "github.com/POps-Rox/tf-az-overlays-diagnosticsettings"
-  version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
@@ -24,7 +23,6 @@ module "mod_log_diagnostic_settings" {
 #----------------------------------------------------------
 module "mod_aa_diagnostic_settings" {
   source  = "github.com/POps-Rox/tf-az-overlays-diagnosticsettings"
-  version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
