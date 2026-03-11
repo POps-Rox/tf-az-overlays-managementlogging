@@ -25,7 +25,7 @@ For more information, please read the [SCCA documentation](https://www.cisa.gov/
 # Licensed under the MIT License.
 
 module "mod_operational_logging" {
-  source  = "azurenoops/overlays-management-logging"
+  source  = "POps-Rox/tf-az-overlays-management-logging"
   version = ">= 1.0.0"
 
   #####################################
