@@ -5,7 +5,7 @@
 # Hub Logging Storage Account Creation
 #----------------------------------------------------------
 module "mod_loganalytics_sa" {
-  source                       = "azurenoops/overlays-storage-account/azurerm"
+  source                       = "github.com/POps-Rox/tf-az-overlays-storageaccount"
   version                      = ">= 0.1.0"
   depends_on                   = [module.mod_scaffold_rg]
   existing_resource_group_name = local.resource_group_name

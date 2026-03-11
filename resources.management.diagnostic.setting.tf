@@ -5,7 +5,7 @@
 # Operations Log Analytics Workspace Diagnostic Setting
 #----------------------------------------------------------
 module "mod_log_diagnostic_settings" {
-  source  = "azurenoops/overlays-diagnostic-settings/azurerm"
+  source  = "github.com/POps-Rox/tf-az-overlays-diagnosticsettings"
   version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
@@ -23,7 +23,7 @@ module "mod_log_diagnostic_settings" {
 # Automation Account Diagnostic Setting
 #----------------------------------------------------------
 module "mod_aa_diagnostic_settings" {
-  source  = "azurenoops/overlays-diagnostic-settings/azurerm"
+  source  = "github.com/POps-Rox/tf-az-overlays-diagnosticsettings"
   version = "1.0.0"
 
   # Resource Group, location, VNet and Subnet details
